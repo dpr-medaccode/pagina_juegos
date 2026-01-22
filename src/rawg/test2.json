@@ -1,0 +1,467 @@
+{
+    "id": 11859,
+    "slug": "team-fortress-2",
+    "name": "Team Fortress 2",
+    "name_original": "Team Fortress 2",
+    "description": "<p>TF2 is an objective based arena shooter with unique characters, representing different classes, acting as a staple of casual and competitive gaming for Steam. Dozens of different maps and game modes are trying to keep this game alive, after all the years it was available. Each character has a vast arsenal that can be accessed through completing in-game achievements, randomly receiving them from loot-boxes within the game, crafting them or just buying and trading items on the Steam Market. <br />\nFor players, that&#39;s not into the direct clash with players from the enemy team, Team Fortress 2 introduced a PvE mode, which is wave defense from the mirrored robotic opponents that have qualities of some of the playable classes. <br />\nEvery update and introduction, made over years, provided a lot of entertainment In the form of comic books an short animated videos, creating and explaining a story behind endless clashes for resources, briefcases or pure domination.</p>",
+    "metacritic": 92,
+    "metacritic_platforms": [],
+    "released": "2007-10-10",
+    "tba": false,
+    "updated": "2026-01-15T17:49:29",
+    "background_image": "https://media.rawg.io/media/games/46d/46d98e6910fbc0706e2948a7cc9b10c5.jpg",
+    "background_image_additional": "https://media.rawg.io/media/screenshots/22d/22d0ef79c8ff037f83c633f904f79198.jpg",
+    "website": "http://www.teamfortress.com/",
+    "rating": 3.68,
+    "rating_top": 4,
+    "ratings": [
+        {
+            "id": 4,
+            "title": "recommended",
+            "count": 1327,
+            "percent": 44.89
+        },
+        {
+            "id": 3,
+            "title": "meh",
+            "count": 706,
+            "percent": 23.88
+        },
+        {
+            "id": 5,
+            "title": "exceptional",
+            "count": 630,
+            "percent": 21.31
+        },
+        {
+            "id": 1,
+            "title": "skip",
+            "count": 293,
+            "percent": 9.91
+        }
+    ],
+    "reactions": {
+        "1": 5,
+        "3": 5,
+        "4": 8,
+        "5": 3,
+        "6": 2,
+        "7": 4,
+        "8": 7,
+        "9": 1,
+        "11": 3,
+        "12": 3,
+        "15": 1,
+        "16": 2,
+        "17": 1,
+        "20": 2,
+        "21": 1
+    },
+    "added": 14023,
+    "added_by_status": {
+        "yet": 198,
+        "owned": 10905,
+        "beaten": 823,
+        "toplay": 50,
+        "dropped": 1868,
+        "playing": 179
+    },
+    "playtime": 8,
+    "screenshots_count": 10,
+    "movies_count": 0,
+    "creators_count": 3,
+    "achievements_count": 520,
+    "parent_achievements_count": 518,
+    "reddit_url": "https://www.reddit.com/r/tf2/",
+    "reddit_name": "",
+    "reddit_description": "",
+    "reddit_logo": "",
+    "reddit_count": 11838,
+    "twitch_count": 122,
+    "youtube_count": 1000000,
+    "reviews_text_count": 29,
+    "ratings_count": 2927,
+    "suggestions_count": 548,
+    "alternative_names": [
+        "TF2"
+    ],
+    "metacritic_url": "",
+    "parents_count": 0,
+    "additions_count": 1,
+    "game_series_count": 2,
+    "user_game": null,
+    "reviews_count": 2956,
+    "saturated_color": "0f0f0f",
+    "dominant_color": "0f0f0f",
+    "parent_platforms": [
+        {
+            "platform": {
+                "id": 1,
+                "name": "PC",
+                "slug": "pc"
+            }
+        },
+        {
+            "platform": {
+                "id": 5,
+                "name": "Apple Macintosh",
+                "slug": "mac"
+            }
+        },
+        {
+            "platform": {
+                "id": 6,
+                "name": "Linux",
+                "slug": "linux"
+            }
+        }
+    ],
+    "platforms": [
+        {
+            "platform": {
+                "id": 6,
+                "name": "Linux",
+                "slug": "linux",
+                "image": null,
+                "year_end": null,
+                "year_start": null,
+                "games_count": 80331,
+                "image_background": "https://media.rawg.io/media/games/6fc/6fcf4cd3b17c288821388e6085bb0fc9.jpg"
+            },
+            "released_at": "2007-10-10",
+            "requirements": {
+                "minimum": "Minimum:\nOS: Ubuntu 12.04\nProcessor: Dual core from Intel or AMD at 2.8 GHz\nMemory: 1 GB RAM\nGraphics: nVidia GeForce 8600/9600GT, ATI/AMD Radeon HD2600/3600 (Graphic Drivers: nVidia 310, AMD 12.11), OpenGL 2.1\nNetwork: Broadband Internet connection\nStorage: 15 GB available space\nSound Card: OpenAL Compatible Sound Card"
+            }
+        },
+        {
+            "platform": {
+                "id": 5,
+                "name": "macOS",
+                "slug": "macos",
+                "image": null,
+                "year_end": null,
+                "year_start": null,
+                "games_count": 107970,
+                "image_background": "https://media.rawg.io/media/games/6cd/6cd653e0aaef5ff8bbd295bf4bcb12eb.jpg"
+            },
+            "released_at": "2007-10-10",
+            "requirements": {
+                "minimum": "Minimum:\nOS: OS X version Leopard 10.5.8 and above\nProcessor: 1.7 GHz Processor or better\nMemory: 1 GB RAM\nGraphics: NVIDIA GeForce 8 or higher, ATI X1600 or higher, Intel HD 3000 or higher\nNetwork: Broadband Internet connection\nStorage: 15 GB available space"
+            }
+        },
+        {
+            "platform": {
+                "id": 4,
+                "name": "PC",
+                "slug": "pc",
+                "image": null,
+                "year_end": null,
+                "year_start": null,
+                "games_count": 560172,
+                "image_background": "https://media.rawg.io/media/games/8cc/8cce7c0e99dcc43d66c8efd42f9d03e3.jpg"
+            },
+            "released_at": "2007-10-10",
+            "requirements": {
+                "minimum": "Minimum:\nOS: Windows® 7 (32/64-bit)/Vista/XP\nProcessor: 1.7 GHz Processor or better\nMemory: 512 MB RAM\nDirectX: Version 8.1\nNetwork: Broadband Internet connection\nStorage: 15 GB available space",
+                "recommended": "Recommended:\nOS: Windows® 7 (32/64-bit)\nProcessor: Pentium 4 processor (3.0GHz, or better)\nMemory: 1 GB RAM\nDirectX: Version 9.0c\nNetwork: Broadband Internet connection\nStorage: 15 GB available space"
+            }
+        }
+    ],
+    "stores": [
+        {
+            "id": 13018,
+            "url": "",
+            "store": {
+                "id": 1,
+                "name": "Steam",
+                "slug": "steam",
+                "domain": "store.steampowered.com",
+                "games_count": 122974,
+                "image_background": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
+            }
+        }
+    ],
+    "developers": [
+        {
+            "id": 1612,
+            "name": "Valve Software",
+            "slug": "valve-software",
+            "games_count": 44,
+            "image_background": "https://media.rawg.io/media/games/46d/46d98e6910fbc0706e2948a7cc9b10c5.jpg"
+        }
+    ],
+    "genres": [
+        {
+            "id": 4,
+            "name": "Action",
+            "slug": "action",
+            "games_count": 191356,
+            "image_background": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Shooter",
+            "slug": "shooter",
+            "games_count": 59613,
+            "image_background": "https://media.rawg.io/media/games/b8c/b8c243eaa0fbac8115e0cdccac3f91dc.jpg"
+        }
+    ],
+    "tags": [
+        {
+            "id": 40847,
+            "name": "Steam Achievements",
+            "slug": "steam-achievements",
+            "language": "eng",
+            "games_count": 51628,
+            "image_background": "https://media.rawg.io/media/games/7a2/7a2500ee8b2c0e1ff268bb4479463dea.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Multiplayer",
+            "slug": "multiplayer",
+            "language": "eng",
+            "games_count": 42508,
+            "image_background": "https://media.rawg.io/media/games/f46/f466571d536f2e3ea9e815ad17177501.jpg"
+        },
+        {
+            "id": 7808,
+            "name": "steam-trading-cards",
+            "slug": "steam-trading-cards",
+            "language": "eng",
+            "games_count": 7568,
+            "image_background": "https://media.rawg.io/media/games/490/49016e06ae2103881ff6373248843069.jpg"
+        },
+        {
+            "id": 18,
+            "name": "Co-op",
+            "slug": "co-op",
+            "language": "eng",
+            "games_count": 14364,
+            "image_background": "https://media.rawg.io/media/games/713/713269608dc8f2f40f5a670a14b2de94.jpg"
+        },
+        {
+            "id": 411,
+            "name": "cooperative",
+            "slug": "cooperative",
+            "language": "eng",
+            "games_count": 6573,
+            "image_background": "https://media.rawg.io/media/games/da1/da1b267764d77221f07a4386b6548e5a.jpg"
+        },
+        {
+            "id": 8,
+            "name": "First-Person",
+            "slug": "first-person",
+            "language": "eng",
+            "games_count": 37355,
+            "image_background": "https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg"
+        },
+        {
+            "id": 40845,
+            "name": "Partial Controller Support",
+            "slug": "partial-controller-support",
+            "language": "eng",
+            "games_count": 13980,
+            "image_background": "https://media.rawg.io/media/games/15c/15c95a4915f88a3e89c821526afe05fc.jpg"
+        },
+        {
+            "id": 30,
+            "name": "FPS",
+            "slug": "fps",
+            "language": "eng",
+            "games_count": 14969,
+            "image_background": "https://media.rawg.io/media/games/7fa/7fa0b586293c5861ee32490e953a4996.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Online Co-Op",
+            "slug": "online-co-op",
+            "language": "eng",
+            "games_count": 7659,
+            "image_background": "https://media.rawg.io/media/games/f87/f87457e8347484033cb34cde6101d08d.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Funny",
+            "slug": "funny",
+            "language": "eng",
+            "games_count": 28818,
+            "image_background": "https://media.rawg.io/media/games/960/960b601d9541cec776c5fa42a00bf6c4.jpg"
+        },
+        {
+            "id": 123,
+            "name": "Comedy",
+            "slug": "comedy",
+            "language": "eng",
+            "games_count": 14850,
+            "image_background": "https://media.rawg.io/media/games/2ba/2bac0e87cf45e5b508f227d281c9252a.jpg"
+        },
+        {
+            "id": 79,
+            "name": "Free to Play",
+            "slug": "free-to-play",
+            "language": "eng",
+            "games_count": 9832,
+            "image_background": "https://media.rawg.io/media/games/c92/c9207a31f0eeb9904a840fc26eae6afb.jpg"
+        },
+        {
+            "id": 80,
+            "name": "Tactical",
+            "slug": "tactical",
+            "language": "eng",
+            "games_count": 6608,
+            "image_background": "https://media.rawg.io/media/games/1a1/1a17e9b6286edb7e1f1e510110ccb0c0.jpg"
+        },
+        {
+            "id": 11669,
+            "name": "stats",
+            "slug": "stats",
+            "language": "eng",
+            "games_count": 6029,
+            "image_background": "https://media.rawg.io/media/games/48e/48e63bbddeddbe9ba81942772b156664.jpg"
+        },
+        {
+            "id": 40852,
+            "name": "Steam Workshop",
+            "slug": "steam-workshop",
+            "language": "eng",
+            "games_count": 1768,
+            "image_background": "https://media.rawg.io/media/games/2ba/2bac0e87cf45e5b508f227d281c9252a.jpg"
+        },
+        {
+            "id": 40832,
+            "name": "Cross-Platform Multiplayer",
+            "slug": "cross-platform-multiplayer",
+            "language": "eng",
+            "games_count": 3158,
+            "image_background": "https://media.rawg.io/media/games/5eb/5eb49eb2fa0738fdb5bacea557b1bc57.jpg"
+        },
+        {
+            "id": 40838,
+            "name": "Includes level editor",
+            "slug": "includes-level-editor",
+            "language": "eng",
+            "games_count": 2214,
+            "image_background": "https://media.rawg.io/media/games/26b/26b27e1da9e3727fcb12e3e4e86c8c19.jpg"
+        },
+        {
+            "id": 62,
+            "name": "Moddable",
+            "slug": "moddable",
+            "language": "eng",
+            "games_count": 1135,
+            "image_background": "https://media.rawg.io/media/games/55e/55ee6432ac2bf224610fa17e4c652107.jpg"
+        },
+        {
+            "id": 40837,
+            "name": "In-App Purchases",
+            "slug": "in-app-purchases",
+            "language": "eng",
+            "games_count": 3409,
+            "image_background": "https://media.rawg.io/media/games/5f6/5f61441e6338e9221f96a8f4c64c7bb8.jpg"
+        },
+        {
+            "id": 40833,
+            "name": "Captions available",
+            "slug": "captions-available",
+            "language": "eng",
+            "games_count": 1483,
+            "image_background": "https://media.rawg.io/media/games/23b/23b69bfef2a1ce2e3dcdf1aa8ef1150b.jpg"
+        },
+        {
+            "id": 125,
+            "name": "Crafting",
+            "slug": "crafting",
+            "language": "eng",
+            "games_count": 5516,
+            "image_background": "https://media.rawg.io/media/games/152/152e788b7504aa2753c86dae912fb34c.jpg"
+        },
+        {
+            "id": 11,
+            "name": "Team-Based",
+            "slug": "team-based",
+            "language": "eng",
+            "games_count": 2070,
+            "image_background": "https://media.rawg.io/media/games/8bd/8bd24e3c15354a9555bb1437fe555a69.jpg"
+        },
+        {
+            "id": 170,
+            "name": "Competitive",
+            "slug": "competitive",
+            "language": "eng",
+            "games_count": 1312,
+            "image_background": "https://media.rawg.io/media/games/9fb/9fbaea2168caea1f806546dfdaaeb1da.jpg"
+        },
+        {
+            "id": 40856,
+            "name": "Valve Anti-Cheat enabled",
+            "slug": "valve-anti-cheat-enabled",
+            "language": "eng",
+            "games_count": 105,
+            "image_background": "https://media.rawg.io/media/games/78d/78dfae12fb8c5b16cd78648553071e0a.jpg"
+        },
+        {
+            "id": 197,
+            "name": "Robots",
+            "slug": "robots",
+            "language": "eng",
+            "games_count": 8870,
+            "image_background": "https://media.rawg.io/media/screenshots/b4d/b4df87a9b3f9867d0bfd9c1910193008.jpg"
+        },
+        {
+            "id": 40834,
+            "name": "Commentary available",
+            "slug": "commentary-available",
+            "language": "eng",
+            "games_count": 298,
+            "image_background": "https://media.rawg.io/media/screenshots/76a/76a4511b693e10e282463b5904a2f450.jpg"
+        },
+        {
+            "id": 164,
+            "name": "Cartoony",
+            "slug": "cartoony",
+            "language": "eng",
+            "games_count": 8623,
+            "image_background": "https://media.rawg.io/media/games/bbf/bbf8d74ab64440ad76294cff2f4d9cfa.jpg"
+        },
+        {
+            "id": 179,
+            "name": "Cartoon",
+            "slug": "cartoon",
+            "language": "eng",
+            "games_count": 7712,
+            "image_background": "https://media.rawg.io/media/games/88a/88af17cc08783ccdd1608ae63c47eeac.jpg"
+        },
+        {
+            "id": 265,
+            "name": "Class-Based",
+            "slug": "class-based",
+            "language": "eng",
+            "games_count": 925,
+            "image_background": "https://media.rawg.io/media/screenshots/616/616437f375a1080756c917b1437404f3.jpg"
+        },
+        {
+            "id": 245,
+            "name": "Trading",
+            "slug": "trading",
+            "language": "eng",
+            "games_count": 1490,
+            "image_background": "https://media.rawg.io/media/screenshots/8ba/8ba023119cc83dff0d1d535f12e6b348.jpg"
+        }
+    ],
+    "publishers": [
+        {
+            "id": 3399,
+            "name": "Valve",
+            "slug": "valve",
+            "games_count": 48,
+            "image_background": "https://media.rawg.io/media/games/66e/66e90c9d7b9a17335b310ceb294e9365.jpg"
+        }
+    ],
+    "esrb_rating": {
+        "id": 4,
+        "name": "Mature",
+        "slug": "mature"
+    },
+    "clip": null, 
+    "description_raw": "TF2 is an objective based arena shooter with unique characters, representing different classes, acting as a staple of casual and competitive gaming for Steam. Dozens of different maps and game modes are trying to keep this game alive, after all the years it was available. Each character has a vast arsenal that can be accessed through completing in-game achievements, randomly receiving them from loot-boxes within the game, crafting them or just buying and trading items on the Steam Market. \r\nFor players, that's not into the direct clash with players from the enemy team, Team Fortress 2 introduced a PvE mode, which is wave defense from the mirrored robotic opponents that have qualities of some of the playable classes. \r\nEvery update and introduction, made over years, provided a lot of entertainment In the form of comic books an short animated videos, creating and explaining a story behind endless clashes for resources, briefcases or pure domination."
+}
