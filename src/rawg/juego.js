@@ -84,6 +84,19 @@ export default class Juego {
 
     }
 
+    static async new_mas_populares(pagina = 1, cantidad = 10) {
+
+        let res = await fetch(
+            `https://api.rawg.io/api/games?key=${RWAG.api}&ordering=-added&page=${pagina}&page_size=${cantidad}`
+        )
+
+        let data = await res.json()
+
+        return data.results.map(j => new Juego(j))
+        
+    }
+
+
 
 
 

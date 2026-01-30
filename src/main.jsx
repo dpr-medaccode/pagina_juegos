@@ -2,10 +2,11 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import Index from './pages/Index.jsx'
-import { createBrowserRouter, Outlet, RouterProvider } from 'react-router'
+import { createBrowserRouter, RouterProvider } from 'react-router'
 import JuegosVista from './pages/JuegosVista.jsx'
 import DetalleJuegoVista from './pages/DetalleJuegoVista.jsx'
 import AppLayout from './layouts/AppLayout.jsx'
+import loader from './pages/DetalleJuegoVistaLoader.jsx'
 
 const router = createBrowserRouter([
 
@@ -13,7 +14,7 @@ const router = createBrowserRouter([
 
     Component: AppLayout,
 
-    errorElement: <h1>Error</h1>,
+   // errorElement: <h1>Error</h1>,
 
     children: [
       {
@@ -28,7 +29,8 @@ const router = createBrowserRouter([
 
       {
         path: "/games/:id",
-        Component: DetalleJuegoVista
+        Component: DetalleJuegoVista,
+        loader: loader
       }
 
     ]
