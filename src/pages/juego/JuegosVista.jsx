@@ -1,58 +1,26 @@
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Juego from "../../rawg/juego";
 import JuegoMiniatura from "../../components/Juego/JuegoMiniatura";
-
-const containerVariants = {
-
-    hidden: {},
-
-    show: {
-        transition: {
-            staggerChildren: 0.1
-        }
-    }
-
-}
-
-const itemVariants = {
-
-    hidden: { opacity: 0, y: 20 },
-
-    show: {
-
-        opacity: 1,
-
-        y: 0,
-
-        transition: {
-
-            duration: 0.4,
-
-            ease: "easeOut"
-
-        }
-
-    }
-
-}
+import { containerVariants, itemVariants } from "../animacionGrid";
 
 export default function JuegosVista() {
 
-    const [params, setParams] = useSearchParams();
+    const [params, setParams] = useSearchParams()
+    const search = params.get("search")
 
-    const [juegos, setJuegos] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const pagina = Number(params.get("page")) || 1;
+    const [juegos, setJuegos] = useState([])
+    const [loading, setLoading] = useState(true)
+    const pagina = Number(params.get("page")) || 1
 
-    const search = params.get("search");
+
 
     useEffect(() => {
 
-        async function fetchJuegos() {
+        async function load() {
 
-            setLoading(true);
+            setLoading(true)
 
             let data;
 
@@ -73,7 +41,7 @@ export default function JuegosVista() {
 
         }
 
-        fetchJuegos();
+        load();
 
     }, [search, pagina]);
 
@@ -86,15 +54,14 @@ export default function JuegosVista() {
             <motion.div
 
                 className="
-            max-w-7xl
-            mx-auto
-            p-6 grid
-            grid-cols-2 
-            sm:grid-cols-3
-            md:grid-cols-4 
-            lg:grid-cols-5 
-            gap-6"
-
+                max-w-7xl
+                mx-auto
+                p-6 grid
+                grid-cols-2 
+                sm:grid-cols-3
+                md:grid-cols-4 
+                lg:grid-cols-5 
+                gap-6"
                 variants={containerVariants}
                 initial="hidden"
                 animate="show">
@@ -111,8 +78,16 @@ export default function JuegosVista() {
 
             </motion.div>
 
-            <div className="flex flex-wrap justify-center items-center  gap-4 mt-6 p-4">
-
+            <div
+                className="
+            flex 
+            flex-wrap 
+            justify-center 
+            items-center  
+            gap-4 
+            mt-6 
+            p-4"
+            >
                 <button
                     onClick={() => {
                         const newPage = Math.max(pagina - 1, 1);
@@ -121,12 +96,31 @@ export default function JuegosVista() {
                             page: newPage
                         });
                     }}
-                    className="px-5 py-2 bg-linear-to-r from-indigo-600 to-indigo-500 text-white rounded-lg shadow-md hover:from-indigo-700 hover:to-indigo-600 transition-all duration-300"
+                    className="
+                    px-5 
+                    py-2 
+                    bg-linear-to-r 
+                    from-indigo-600 
+                    to-indigo-500 
+                    text-white 
+                    rounded-lg 
+                    shadow-md 
+                    hover:from-indigo-700 
+                    hover:to-indigo-600 
+                    transition-all 
+                    duration-300"
                 >
                     &larr; Previous
                 </button>
 
-                <span className="px-5 py-2 bg-zinc-800 text-zinc-100 rounded-lg shadow-inner">
+                <span className="
+                px-5 
+                py-2 
+                bg-zinc-800 
+                text-zinc-100 
+                rounded-lg 
+                shadow-inner"
+                >
                     Página <span className="font-semibold">{pagina}</span>
                 </span>
 
@@ -138,7 +132,20 @@ export default function JuegosVista() {
                             page: newPage
                         });
                     }}
-                    className="px-5 py-2 bg-linear-to-r from-indigo-600 to-indigo-500 text-white rounded-lg shadow-md hover:from-indigo-700 hover:to-indigo-600 transition-all duration-300">
+                    className="
+                    px-5 
+                    py-2 
+                    bg-linear-to-r 
+                    from-indigo-600 
+                    to-indigo-500 
+                    text-white 
+                    rounded-lg 
+                    shadow-md 
+                    hover:from-indigo-700 
+                    hover:to-indigo-600 
+                    transition-all 
+                    duration-300"
+                >
                     Next &rarr;
                 </button>
 

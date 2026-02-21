@@ -4,16 +4,14 @@ import { Link, useNavigate } from "react-router-dom";
 export default function Header() {
 
   const [busqueda, set_busqueda] = useState('');
-  const [filtro, setFiltro] = useState('juego');
+  const [filtro, setFiltro] = useState('games'); // el filtro selecionado al recargar
   const navigate = useNavigate();
 
   const handleKeyDown = (e) => {
 
     if (e.key === 'Enter' && busqueda.trim() !== '') {
 
-      navigate(`/games?search=${encodeURIComponent(busqueda)}?page=1`)
-
-      
+      navigate(`/${filtro}?search=${encodeURIComponent(busqueda)}?page=1`)
 
     }
 
@@ -34,42 +32,46 @@ export default function Header() {
             value={busqueda}
             onChange={(e) => set_busqueda(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Buscar juegos..."
+            placeholder={`Buscar ${filtro}...`}
             className="
-      w-72
-      bg-zinc-900
-      text-zinc-100
-      placeholder-zinc-500
-      px-4 py-2
-      rounded-lg
-      border border-zinc-700
-      focus:outline-none
-      focus:ring-2
-      focus:ring-indigo-500
-    "
+            w-72
+          bg-zinc-900
+          text-zinc-100
+          placeholder-zinc-500
+            px-4 py-2
+            rounded-lg
+            border border-zinc-700
+            focus:outline-none
+            focus:ring-2
+          focus:ring-indigo-500
+            "
           />
 
           <div className="relative w-44">
             <select
-              onChange={(e) => setFiltro(e.target.value)}
+              onChange={(e) => {
+                setFiltro(e.target.value)
+                set_busqueda('')
+                navigate(`/${e.target.value}?page=1`)
+              }}
               className="
-              w-full
+            w-full
             bg-zinc-900
             text-zinc-100
-              border border-zinc-700
-              rounded-lg
-              px-4 py-2
-              appearance-none
-              focus:outline-none
-              focus:ring-2
+            border border-zinc-700
+            rounded-lg
+            px-4 py-2
+            appearance-none
+            focus:outline-none
+            focus:ring-2
             focus:ring-indigo-500
             hover:border-indigo-500
-              transition
-              cursor-pointer"
+            transition
+            cursor-pointer"
               defaultValue=""
             >
-              <option value="juego" selected>Juego</option>
-              <option value="tag">Tag</option>
+              <option value="games">Juego</option>
+              <option value="tags">Tag</option>
               <option value="publisher">Publisher</option>
               <option value="plataforma">Plataforma</option>
             </select>
@@ -84,11 +86,10 @@ export default function Header() {
 
         <nav className="flex gap-6 text-zinc-300">
           <Link to="/" className="hover:text-indigo-400 transition">Inicio</Link>
-          <Link to="/games?page=1" className="hover:text-indigo-400 transition">Juegos</Link>
         </nav>
 
       </div>
-    </header>
+    </header >
 
   );
 }

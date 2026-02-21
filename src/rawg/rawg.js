@@ -28,7 +28,7 @@ export default class RWAG {
         return data.results
     }
 
-    static async etiquetas(pagina = 1, cantidad = 10) {
+    static async tags(pagina = 1, cantidad = 10) {
 
         let res = await fetch(
             `https://api.rawg.io/api/tags?key=${RWAG.api}&page=${pagina}&size=${cantidad}`

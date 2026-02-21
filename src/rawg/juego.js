@@ -23,6 +23,18 @@ export default class Juego {
 
     }
 
+    static async new_mas_populares(pagina = 1, cantidad = 10) {
+
+        let res = await fetch(
+            `https://api.rawg.io/api/games?key=${RWAG.api}&ordering=-added&page=${pagina}&page_size=${cantidad}`
+        )
+
+        let data = await res.json()
+
+        return data.results.map(j => new Juego(j))
+
+    }
+
     static async new_from_id(id) {
 
         let res = await fetch(
@@ -45,7 +57,6 @@ export default class Juego {
 
         return data.results.map(j => new Juego(j))
 
-
     }
 
     static async new_from_genero(genero, pagina = 1, cantidad = 10) {
@@ -60,10 +71,22 @@ export default class Juego {
 
     }
 
-    static async new_from_etiqueta(etiqueta, pagina = 1, cantidad = 10) {
+    static async new_from_tag(tag, pagina = 1, cantidad = 10) {
 
         let res = await fetch(
-            `https://api.rawg.io/api/games?tags=${etiqueta}&key=${RWAG.api}&page=${pagina}&page_size=${cantidad}`
+            `https://api.rawg.io/api/games?tags=${tag}&key=${RWAG.api}&page=${pagina}&page_size=${cantidad}`
+        )
+
+        let data = await res.json()
+
+        return data.results.map(j => new Juego(j))
+
+    }
+
+    static async new_from_publisher(publisher, pagina = 1, cantidad = 10) {
+
+        let res = await fetch(
+            `https://api.rawg.io/api/games?publishers=${publisher}&key=${RWAG.api}&page=${pagina}&page_size=${cantidad}`
         )
 
         let data = await res.json()
@@ -84,19 +107,17 @@ export default class Juego {
 
     }
 
-    static async new_mas_populares(pagina = 1, cantidad = 10) {
+    static async new_from_plataforma(plataforma, pagina = 1, cantidad = 10) {
 
         let res = await fetch(
-            `https://api.rawg.io/api/games?key=${RWAG.api}&ordering=-added&page=${pagina}&page_size=${cantidad}`
+            `https://api.rawg.io/api/games?platforms=${plataforma}&key=${RWAG.api}&page=${pagina}&page_size=${cantidad}`
         )
 
         let data = await res.json()
 
         return data.results.map(j => new Juego(j))
-        
+
     }
-
-
 
 
 

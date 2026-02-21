@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useLoaderData } from "react-router-dom"
+import { useLoaderData } from "react-router"
 import { motion } from "framer-motion"
 import Juego from "../../rawg/juego"
 
@@ -8,13 +8,13 @@ export default function DetalleJuegoVista() {
     const { id } = useLoaderData()
 
     const [juego, setJuego] = useState(null);
-    const [loading, setLoading] = useState(true);
+    const [loading, load] = useState(true);
 
     useEffect(() => {
 
         async function fetchJuego() {
 
-            setLoading(true)
+            load(true)
 
             try {
                 const data = await Juego.new_from_id(id)
@@ -26,7 +26,7 @@ export default function DetalleJuegoVista() {
 
             } finally {
 
-                setLoading(false)
+                load(false)
 
             }
         }
