@@ -14,7 +14,7 @@ const router = createBrowserRouter([
 
     Component: AppLayout,
 
-   // errorElement: <h1>Error</h1>,
+    // errorElement: <h1>Error</h1>,
 
     children: [
       {
@@ -31,6 +31,8 @@ const router = createBrowserRouter([
         path: "/games/:id",
         Component: DetalleJuegoVista,
         loader: loader
+
+
       }
 
     ]

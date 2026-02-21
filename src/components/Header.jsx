@@ -10,7 +10,7 @@ export default function Header() {
 
     if (e.key === 'Enter' && busqueda.trim() !== '') {
 
-      navigate(`/games?search=${encodeURIComponent(busqueda)}`)
+      navigate(`/games?search=${encodeURIComponent(busqueda)}?page=1`)
 
       // set_busqueda('') 
 
@@ -37,7 +37,7 @@ export default function Header() {
 
         <nav className="flex gap-6 text-zinc-300">
           <Link to="/" className="hover:text-indigo-400 transition">Inicio</Link>
-          <Link to="/games" className="hover:text-indigo-400 transition">Juegos</Link>
+          <Link to="/games?page=1" className="hover:text-indigo-400 transition">Juegos</Link>
         </nav>
 
       </div>
