@@ -3,10 +3,16 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import Index from './pages/Index.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router'
-import JuegosVista from './pages/JuegosVista.jsx'
-import DetalleJuegoVista from './pages/DetalleJuegoVista.jsx'
+import JuegosVista from './pages/juego/JuegosVista'
+import DetalleJuegoVista from './pages/juego/DetalleJuegoVista.jsx'
 import AppLayout from './layouts/AppLayout.jsx'
-import loader from './pages/DetalleJuegoVistaLoader.jsx'
+import idLoader from './idLoader.js'
+import TagsVista from './pages/tag/TagsVista.jsx'
+import DetalleTagsVista from './pages/tag/DetalleTagsVista.jsx'
+import PublishersVista from './pages/publisher/PublishersVista.jsx'
+import DetallePublisherVista from './pages/publisher/DetallePublisherVista.jsx'
+import PlataformaVista from './pages/plataforma/PlataformaVista.jsx'
+import DetallePlataformaVista from './pages/plataforma/DetallePlataformaVista.jsx'
 
 const router = createBrowserRouter([
 
@@ -30,10 +36,38 @@ const router = createBrowserRouter([
       {
         path: "/games/:id",
         Component: DetalleJuegoVista,
-        loader: loader
+        loader: idLoader
+      },
+      {
+        path: "/tags",
+        Component: TagsVista
+      },
 
+      {
+        path: "/tags/:id",
+        Component: DetalleTagsVista,
+        loader: idLoader
+      },
+      {
+        path: "/publisher",
+        Component: PublishersVista
+      },
 
-      }
+      {
+        path: "/publisher/:id",
+        Component: DetallePublisherVista,
+        loader: idLoader
+      },
+        {
+        path: "/plataforma",
+        Component:PlataformaVista
+      },
+
+      {
+        path: "/plataforma/:id",
+        Component: DetallePlataformaVista,
+        loader: idLoader
+      },
 
     ]
 

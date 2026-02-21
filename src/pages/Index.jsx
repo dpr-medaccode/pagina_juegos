@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { motion, useAnimation } from "framer-motion"
 import Juego from "../rawg/juego"
-import JuegoMiniatura from "../components/JuegoMiniatura"
+import JuegoMiniatura from "../components/Juego/JuegoMiniatura"
 
 export default function Index() {
 

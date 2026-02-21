@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useLoaderData } from "react-router-dom"
 import { motion } from "framer-motion"
-import Juego from "../rawg/juego"
+import Juego from "../../rawg/juego"
 
 export default function DetalleJuegoVista() {
 

@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 export default function Header() {
 
   const [busqueda, set_busqueda] = useState('');
+  const [filtro, setFiltro] = useState('juego');
   const navigate = useNavigate();
 
   const handleKeyDown = (e) => {
@@ -12,7 +13,7 @@ export default function Header() {
 
       navigate(`/games?search=${encodeURIComponent(busqueda)}?page=1`)
 
-      // set_busqueda('') 
+      
 
     }
 
@@ -26,14 +27,60 @@ export default function Header() {
           GameExplorer
         </h1>
 
-        <input
-          type="text"
-          value={busqueda}
-          onChange={(e) => set_busqueda(e.target.value)}
-          onKeyDown={handleKeyDown}
-          placeholder="Buscar juegos..."
-          className="w-72 bg-zinc-900 text-zinc-100 placeholder-zinc-500 px-4 py-2 rounded-lg border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-        />
+        <div className="flex items-center gap-3">
+
+          <input
+            type="text"
+            value={busqueda}
+            onChange={(e) => set_busqueda(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder="Buscar juegos..."
+            className="
+      w-72
+      bg-zinc-900
+      text-zinc-100
+      placeholder-zinc-500
+      px-4 py-2
+      rounded-lg
+      border border-zinc-700
+      focus:outline-none
+      focus:ring-2
+      focus:ring-indigo-500
+    "
+          />
+
+          <div className="relative w-44">
+            <select
+              onChange={(e) => setFiltro(e.target.value)}
+              className="
+              w-full
+            bg-zinc-900
+            text-zinc-100
+              border border-zinc-700
+              rounded-lg
+              px-4 py-2
+              appearance-none
+              focus:outline-none
+              focus:ring-2
+            focus:ring-indigo-500
+            hover:border-indigo-500
+              transition
+              cursor-pointer"
+              defaultValue=""
+            >
+              <option value="juego" selected>Juego</option>
+              <option value="tag">Tag</option>
+              <option value="publisher">Publisher</option>
+              <option value="plataforma">Plataforma</option>
+            </select>
+
+            <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-zinc-400">
+              ▼
+            </div>
+          </div>
+
+        </div>
+
 
         <nav className="flex gap-6 text-zinc-300">
           <Link to="/" className="hover:text-indigo-400 transition">Inicio</Link>

@@ -1,8 +1,8 @@
 import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Juego from "../rawg/juego";
-import JuegoMiniatura from "../components/JuegoMiniatura";
+import Juego from "../../rawg/juego";
+import JuegoMiniatura from "../../components/Juego/JuegoMiniatura";
 
 const containerVariants = {
 
