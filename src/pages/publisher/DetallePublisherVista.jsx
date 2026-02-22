@@ -22,7 +22,7 @@ export default function DetallePublisherVista() {
 
     async function loadPublisher() {
       setLoadingTag(true);
-      const p = await Publisher.new_from_id(id);
+      const p = await Publisher.new_from_id(id)
       setPublisher(p);
       setLoadingTag(false);
     }
@@ -86,6 +86,14 @@ export default function DetallePublisherVista() {
           transition={{ duration: 0.3 }}
         />
       )}
+
+      <motion.div
+        className="text-zinc-300 leading-relaxed space-y-4 [&_h3]:text-xl [&_h3]:font-bold [&_h3]:mt-6"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
+        dangerouslySetInnerHTML={{ __html: publisher.description }}
+      />
 
       <motion.h2
         className="text-3xl font-extrabold tracking-tight"
