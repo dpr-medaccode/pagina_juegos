@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import Juego from "../../rawg/juego"
 import { containerVariants, itemVariants } from "../animacionGrid"
 import TagMiniatura from "../../components/Tag/TagMiniatura"
+import PublisherMiniaturaImagen from "../../components/Publisher/PublisherMiniaturaImagen"
 
 export default function DetalleJuegoVista() {
 
@@ -70,7 +71,6 @@ export default function DetalleJuegoVista() {
                 {juego.name}
             </motion.h1>
 
-
             <motion.img
                 src={juego.background_image}
                 alt={juego.name}
@@ -78,7 +78,6 @@ export default function DetalleJuegoVista() {
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.3 }}
             />
-
 
             <motion.p
                 className="text-zinc-300 leading-relaxed"
@@ -144,6 +143,52 @@ export default function DetalleJuegoVista() {
                 </motion.div>
 
             </motion.div>
+
+            <motion.h2
+                className="text-3xl font-extrabold tracking-tight m-1"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+            >Publishers</motion.h2>
+
+            <motion.div
+                className="flex flex-wrap gap-2"
+                initial="hidden"
+                animate="show"
+                variants={{
+                    show: { transition: { staggerChildren: 0.1 } }
+                }}
+            >
+
+                <motion.div
+
+                    className="
+                                max-w-7xl
+                                mx-auto
+                                p-6 grid
+                                grid-cols-1 
+                                sm:grid-cols-2
+                                md:grid-cols-3 
+                                lg:grid-cols-4 
+                                gap-6"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="show">
+
+                    {juego.publishers.map((publisher) => (
+
+                        <motion.div key={publisher.id} variants={itemVariants}>
+
+                            <PublisherMiniaturaImagen publisher={publisher} />
+
+                        </motion.div>
+
+                    ))}
+
+                </motion.div>
+
+            </motion.div>
+
         </motion.div>
     );
 }

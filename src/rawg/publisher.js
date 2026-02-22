@@ -1,4 +1,5 @@
 import Juego from "./juego";
+import RWAG from "./rawg";
 
 export default class Publisher {
 
@@ -11,7 +12,7 @@ export default class Publisher {
     static async new_mas_populares(pagina = 1, cantidad = 10) {
 
         let res = await fetch(
-            `https://api.rawg.io/api/publishers?key=${RWAG.api}&ordering=-added&page=${pagina}&size=${cantidad}`
+            `https://api.rawg.io/api/publishers?key=${RWAG.api}&ordering=-added&page=${pagina}&page_size=${cantidad}`
         )
 
         let data = await res.json()
@@ -43,6 +44,12 @@ export default class Publisher {
         let data = await res.json()
 
         return new Publisher(data)
+
+    }
+
+    async juegos(pagina = 1, cantidad = 10) {
+
+        return Juego.new_from_publisher(this.id, pagina, cantidad)
 
     }
 
