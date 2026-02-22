@@ -55,19 +55,19 @@ export default function Header() {
                 navigate(`/${e.target.value}?page=1`)
               }}
               className="
-            w-full
-            bg-zinc-900
-            text-zinc-100
-            border border-zinc-700
-            rounded-lg
-            px-4 py-2
-            appearance-none
-            focus:outline-none
-            focus:ring-2
-            focus:ring-indigo-500
-            hover:border-indigo-500
-            transition
-            cursor-pointer"
+              w-full
+              bg-zinc-900
+              text-zinc-100
+              border border-zinc-700
+              rounded-lg
+              px-4 py-2
+              appearance-none
+              focus:outline-none
+              focus:ring-2
+              focus:ring-indigo-500
+              hover:border-indigo-500
+              transition
+              cursor-pointer"
               defaultValue=""
             >
               <option value="games">Juego</option>

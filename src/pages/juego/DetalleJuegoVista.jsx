@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { useLoaderData } from "react-router"
 import { motion } from "framer-motion"
 import Juego from "../../rawg/juego"
+import { containerVariants, itemVariants } from "../animacionGrid"
+import TagMiniatura from "../../components/Tag/TagMiniatura"
 
 export default function DetalleJuegoVista() {
 
@@ -98,6 +100,12 @@ export default function DetalleJuegoVista() {
                 </motion.p>
             )}
 
+            <motion.h2
+                className="text-3xl font-extrabold tracking-tight m-1"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+            >Tags</motion.h2>
 
             <motion.div
                 className="flex flex-wrap gap-2"
@@ -107,18 +115,34 @@ export default function DetalleJuegoVista() {
                     show: { transition: { staggerChildren: 0.1 } }
                 }}
             >
-                {juego.genres?.map((g) => (
-                    <motion.span
-                        key={g.id}
-                        className="bg-indigo-600/20 text-indigo-400 px-3 py-1 rounded-full text-sm"
-                        variants={{
-                            hidden: { opacity: 0, y: 10 },
-                            show: { opacity: 1, y: 0 }
-                        }}
-                    >
-                        {g.name}
-                    </motion.span>
-                ))}
+
+                <motion.div
+
+                    className="
+                                max-w-7xl
+                                mx-auto
+                                p-6 grid
+                                grid-cols-2 
+                                sm:grid-cols-3
+                                md:grid-cols-4 
+                                lg:grid-cols-5 
+                                gap-6"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="show">
+
+                    {juego.tags.map((tag) => (
+
+                        <motion.div key={tag.id} variants={itemVariants}>
+
+                            <TagMiniatura tag={tag} />
+
+                        </motion.div>
+
+                    ))}
+
+                </motion.div>
+
             </motion.div>
         </motion.div>
     );

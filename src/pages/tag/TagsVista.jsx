@@ -40,8 +40,6 @@ export default function TagsVista() {
 
       }
 
-      console.log(data);
-
       setTags(data);
 
       setLoading(false);
