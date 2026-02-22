@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router";
 import Publisher from "./../../rawg/publisher.js"
 import TagMiniaturaImagen from "../../components/Tag/TagMiniaturaImagen.jsx";
 import { containerVariants, itemVariants } from "../animacionGrid.js";

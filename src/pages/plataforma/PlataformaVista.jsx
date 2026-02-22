@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router";
 import Plataforma from "./../../rawg/plataforma.js"
 import PlataformaMiniatura from "../../components/Plataforma/PlataformaMiniatura";
 import { containerVariants, itemVariants } from "../animacionGrid.js";
