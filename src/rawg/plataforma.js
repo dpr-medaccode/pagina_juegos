@@ -13,7 +13,7 @@ export default class Plataforma {
     static async new_mas_populares(pagina = 1, cantidad = 10) {
 
         let res = await fetch(
-            `https://api.rawg.io/api/platforms?key=${RWAG.api}&ordering=-added&page=${pagina}&size=${cantidad}`
+            `https://api.rawg.io/api/platforms?key=${RWAG.api}&ordering=-added&page=${pagina}&page_size=${cantidad}`
         )
 
         let data = await res.json()
@@ -32,7 +32,7 @@ export default class Plataforma {
 
         let data = await res.json()
 
-        return data.results.map(pl => new Publisher(pl))
+        return data.results.map(pl => new Plataforma(pl))
 
     }
 

@@ -32,7 +32,13 @@ export default function Header() {
             value={busqueda}
             onChange={(e) => set_busqueda(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder={`Buscar ${filtro}...`}
+            placeholder={
+              filtro === 'plataforma'
+                ? ''
+                : `Buscar ${filtro}...`
+            }
+
+            disabled={filtro === 'plataforma'}
             className="
             w-72
           bg-zinc-900

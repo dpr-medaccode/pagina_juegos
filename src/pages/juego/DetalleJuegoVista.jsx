@@ -5,6 +5,7 @@ import Juego from "../../rawg/juego"
 import { containerVariants, itemVariants } from "../animacionGrid"
 import TagMiniatura from "../../components/Tag/TagMiniatura"
 import PublisherMiniaturaImagen from "../../components/Publisher/PublisherMiniaturaImagen"
+import PlataformaMiniatura from "../../components/Plataforma/PlataformaMiniatura"
 
 export default function DetalleJuegoVista() {
 
@@ -116,16 +117,15 @@ export default function DetalleJuegoVista() {
             >
 
                 <motion.div
-
                     className="
-                                max-w-7xl
-                                mx-auto
-                                p-6 grid
-                                grid-cols-2 
-                                sm:grid-cols-3
-                                md:grid-cols-4 
-                                lg:grid-cols-5 
-                                gap-6"
+                    max-w-7xl
+                    mx-auto
+                    p-6 grid
+                    grid-cols-2 
+                    sm:grid-cols-3
+                    md:grid-cols-4 
+                    lg:grid-cols-5 
+                    gap-6"
                     variants={containerVariants}
                     initial="hidden"
                     animate="show">
@@ -161,16 +161,15 @@ export default function DetalleJuegoVista() {
             >
 
                 <motion.div
-
                     className="
-                                max-w-7xl
-                                mx-auto
-                                p-6 grid
-                                grid-cols-1 
-                                sm:grid-cols-2
-                                md:grid-cols-3 
-                                lg:grid-cols-4 
-                                gap-6"
+                    max-w-7xl
+                    mx-auto
+                    p-6 grid
+                    grid-cols-1 
+                    sm:grid-cols-2
+                    md:grid-cols-3 
+                    lg:grid-cols-4 
+                    gap-6"
                     variants={containerVariants}
                     initial="hidden"
                     animate="show">
@@ -180,6 +179,50 @@ export default function DetalleJuegoVista() {
                         <motion.div key={publisher.id} variants={itemVariants}>
 
                             <PublisherMiniaturaImagen publisher={publisher} />
+
+                        </motion.div>
+
+                    ))}
+
+                </motion.div>
+
+            </motion.div>
+
+            <motion.h2
+                className="text-3xl font-extrabold tracking-tight m-1"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4 }}
+            >Plataformas</motion.h2>
+
+            <motion.div
+                className="flex flex-wrap gap-2"
+                initial="hidden"
+                animate="show"
+                variants={{
+                    show: { transition: { staggerChildren: 0.1 } }
+                }}
+            >
+
+                <motion.div
+                    className="
+                    max-w-7xl
+                    mx-auto
+                    p-6 grid
+                    grid-cols-1 
+                    sm:grid-cols-2
+                    md:grid-cols-3 
+                    lg:grid-cols-4 
+                    gap-6"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="show">
+
+                    {juego.platforms.map((p) => (
+
+                        <motion.div key={p.platform.id} variants={itemVariants}>
+
+                            <PlataformaMiniatura plataforma={p.platform} />
 
                         </motion.div>
 
