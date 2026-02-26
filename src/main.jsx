@@ -1,5 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { Provider } from 'react-redux'
+import { store } from './app/store'
 import './index.css'
 import Index from './pages/Index.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router'
@@ -58,9 +60,9 @@ const router = createBrowserRouter([
         Component: DetallePublisherVista,
         loader: idLoader
       },
-        {
+      {
         path: "/plataforma",
-        Component:PlataformaVista
+        Component: PlataformaVista
       },
 
       {
@@ -76,9 +78,9 @@ const router = createBrowserRouter([
 ])
 
 createRoot(document.getElementById('root')).render(
-
   <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>,
-
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+  </StrictMode>
 )
