@@ -9,6 +9,8 @@ import idPlatformsReducer from "../features/platformas/idPlatformsSlice"
 import idPublishersReducer from "../features/publishers/idPublishersSlice";
 import idTagsReducer from "../features/tags/idTagsSlice";
 
+import eventosReducer from "../features/eventos/eventosSlice";
+
 export const store = configureStore({
 
     reducer: {
@@ -24,6 +26,8 @@ export const store = configureStore({
 
         publishers: publishersReducer,
         idPublishers: idPublishersReducer,
+
+        eventos: eventosReducer,
 
     },
 

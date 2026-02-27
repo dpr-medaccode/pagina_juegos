@@ -92,6 +92,7 @@ export default function Header() {
 
         <nav className="flex gap-6 text-zinc-300">
           <Link to="/" className="hover:text-indigo-400 transition">Inicio</Link>
+          <Link to="/eventos" className="hover:text-indigo-400 transition">Eventos</Link>
         </nav>
 
       </div>
