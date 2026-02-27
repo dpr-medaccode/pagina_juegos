@@ -1,67 +1,57 @@
-import { useEffect, useState } from "react"
-import { useLoaderData } from "react-router"
-import { motion } from "framer-motion"
-import Juego from "../../rawg/juego"
-import { containerVariants, itemVariants } from "../animacionGrid"
-import TagMiniatura from "../../components/Tag/TagMiniatura"
-import PublisherMiniaturaImagen from "../../components/Publisher/PublisherMiniaturaImagen"
-import PlataformaMiniatura from "../../components/Plataforma/PlataformaMiniatura"
+import { useEffect } from "react";
+import { useLoaderData } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import { motion } from "framer-motion";
+
+import { containerVariants, itemVariants } from "../animacionGrid";
+import TagMiniatura from "../../components/Tag/TagMiniatura";
+import PublisherMiniaturaImagen from "../../components/Publisher/PublisherMiniaturaImagen";
+import PlataformaMiniatura from "../../components/Plataforma/PlataformaMiniatura";
+
+import { loadJuegoPorId, clearIdGame } from "../../features/juegos/idJuegoSlice";
 
 export default function DetalleJuegoVista() {
+    const { id } = useLoaderData();
+    const dispatch = useDispatch();
 
-    const { id } = useLoaderData()
-
-    const [juego, setJuego] = useState(null);
-    const [loading, load] = useState(true);
+    const { juego, loading, error } = useSelector((state) => state.idGame);
 
     useEffect(() => {
+        dispatch(loadJuegoPorId(id));
 
-        async function fetchJuego() {
-
-            load(true)
-
-            try {
-                const data = await Juego.new_from_id(id)
-                setJuego(data)
-
-            } catch (error) {
-
-                console.error("Error cargando el juego:", error)
-
-            } finally {
-
-                load(false)
-
-            }
-        }
-
-        fetchJuego()
-
-    }, [id])
+        return () => {
+            dispatch(clearIdGame());
+        };
+    }, [id, dispatch]);
 
     if (loading)
-
         return (
-
             <div className="text-center text-zinc-300 py-20">
                 Cargando juego...
             </div>
+        );
 
-        )
+    if (error)
+        return (
+            <div className="text-center text-zinc-300 py-20">
+                Error: {error}
+            </div>
+        );
 
     if (!juego)
-
         return (
             <div className="text-center text-zinc-300 py-20">
                 Juego no encontrado
             </div>
-        )
+        );
 
     return (
-        <motion.div className="max-w-6xl mx-auto px-6 py-10 space-y-8 text-zinc-100"
+        <motion.div
+            className="max-w-6xl mx-auto px-6 py-10 space-y-8 text-zinc-100"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }} >
+            transition={{ duration: 0.5, ease: "easeOut" }}
+        >
 
             <motion.h1
                 className="text-4xl font-extrabold tracking-tight"
@@ -85,9 +75,8 @@ export default function DetalleJuegoVista() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-            >
-                {juego.description_raw}
-            </motion.p>
+                dangerouslySetInnerHTML={{ __html: juego.description }}
+            />
 
             {juego.released && (
                 <motion.p
@@ -105,43 +94,27 @@ export default function DetalleJuegoVista() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
-            >Tags</motion.h2>
-
+            >
+                Tags
+            </motion.h2>
             <motion.div
                 className="flex flex-wrap gap-2"
                 initial="hidden"
                 animate="show"
-                variants={{
-                    show: { transition: { staggerChildren: 0.1 } }
-                }}
+                variants={{ show: { transition: { staggerChildren: 0.1 } } }}
             >
-
                 <motion.div
-                    className="
-                    max-w-7xl
-                    mx-auto
-                    p-6 grid
-                    grid-cols-2 
-                    sm:grid-cols-3
-                    md:grid-cols-4 
-                    lg:grid-cols-5 
-                    gap-6"
+                    className="max-w-7xl mx-auto p-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
                     variants={containerVariants}
                     initial="hidden"
-                    animate="show">
-
+                    animate="show"
+                >
                     {juego.tags.map((tag) => (
-
                         <motion.div key={tag.id} variants={itemVariants}>
-
                             <TagMiniatura tag={tag} />
-
                         </motion.div>
-
                     ))}
-
                 </motion.div>
-
             </motion.div>
 
             <motion.h2
@@ -149,43 +122,27 @@ export default function DetalleJuegoVista() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
-            >Publishers</motion.h2>
-
+            >
+                Publishers
+            </motion.h2>
             <motion.div
                 className="flex flex-wrap gap-2"
                 initial="hidden"
                 animate="show"
-                variants={{
-                    show: { transition: { staggerChildren: 0.1 } }
-                }}
+                variants={{ show: { transition: { staggerChildren: 0.1 } } }}
             >
-
                 <motion.div
-                    className="
-                    max-w-7xl
-                    mx-auto
-                    p-6 grid
-                    grid-cols-1 
-                    sm:grid-cols-2
-                    md:grid-cols-3 
-                    lg:grid-cols-4 
-                    gap-6"
+                    className="max-w-7xl mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
                     variants={containerVariants}
                     initial="hidden"
-                    animate="show">
-
+                    animate="show"
+                >
                     {juego.publishers.map((publisher) => (
-
                         <motion.div key={publisher.id} variants={itemVariants}>
-
                             <PublisherMiniaturaImagen publisher={publisher} />
-
                         </motion.div>
-
                     ))}
-
                 </motion.div>
-
             </motion.div>
 
             <motion.h2
@@ -193,45 +150,28 @@ export default function DetalleJuegoVista() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
-            >Plataformas</motion.h2>
-
+            >
+                Plataformas
+            </motion.h2>
             <motion.div
                 className="flex flex-wrap gap-2"
                 initial="hidden"
                 animate="show"
-                variants={{
-                    show: { transition: { staggerChildren: 0.1 } }
-                }}
+                variants={{ show: { transition: { staggerChildren: 0.1 } } }}
             >
-
                 <motion.div
-                    className="
-                    max-w-7xl
-                    mx-auto
-                    p-6 grid
-                    grid-cols-1 
-                    sm:grid-cols-2
-                    md:grid-cols-3 
-                    lg:grid-cols-4 
-                    gap-6"
+                    className="max-w-7xl mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
                     variants={containerVariants}
                     initial="hidden"
-                    animate="show">
-
+                    animate="show"
+                >
                     {juego.platforms.map((p) => (
-
                         <motion.div key={p.platform.id} variants={itemVariants}>
-
                             <PlataformaMiniatura plataforma={p.platform} />
-
                         </motion.div>
-
                     ))}
-
                 </motion.div>
-
             </motion.div>
-
         </motion.div>
     );
 }

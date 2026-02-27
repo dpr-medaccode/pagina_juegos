@@ -21,7 +21,7 @@ export const loadJuegos = createAsyncThunk(
 
 )
 
-const gamesSlice = createSlice({
+const juegosSlice = createSlice({
 
     name: "games",
 
@@ -55,4 +55,4 @@ const gamesSlice = createSlice({
     
 })
 
-export default gamesSlice.reducer;
+export default juegosSlice.reducer;
