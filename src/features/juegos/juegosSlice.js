@@ -5,15 +5,15 @@ export const loadJuegos = createAsyncThunk(
 
     "games/loadGames",
 
-    async ({ search, page }) => {
+    async ({ search, page, pageSize }) => {
 
         if (search) {
 
-            return await fetchSearchJuegos(search, page);
+            return await fetchSearchJuegos(search, page, pageSize);
 
         } else {
 
-            return await fetchPopularJuegos(page);
+            return await fetchPopularJuegos(page, pageSize);
 
         }
 

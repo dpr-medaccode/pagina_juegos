@@ -10,6 +10,7 @@ import idPublishersReducer from "../features/publishers/idPublishersSlice";
 import idTagsReducer from "../features/tags/idTagsSlice";
 import eventosReducer from "../features/eventos/eventosSlice";
 import favoritosReducer from '../features/favoritos/favoritosSlice'
+import busquedaReducer from '../features/header/busquedaSlice'
 
 export const store = configureStore({
 
@@ -30,6 +31,8 @@ export const store = configureStore({
         eventos: eventosReducer,
 
         favoritos: favoritosReducer,
+
+        busqueda: busquedaReducer,
 
     },
 

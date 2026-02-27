@@ -18,7 +18,7 @@ export default function JuegosVista() {
 
     useEffect(() => {
 
-        dispatch(loadJuegos({ search, page: pagina }));
+        dispatch(loadJuegos({ search, page: pagina ,pageSize: 20}));
 
     }, [dispatch, search, pagina]);
 
