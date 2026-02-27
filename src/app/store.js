@@ -5,6 +5,9 @@ import platformasReducer from "../features/platformas/platformasSlice";
 import tagsReducer from "../features/tags/tagsSlice";
 import publishersReducer from "../features/publishers/publishersSlice";
 import idJuegoReducer from "../features/juegos/idJuegoSlice";
+import idPlatformsReducer from "../features/platformas/idPlatformsSlice"
+import idPublishersReducer from "../features/publishers/idPublishersSlice";
+import idTagsReducer from "../features/tags/idTagsSlice";
 
 export const store = configureStore({
 
@@ -14,10 +17,13 @@ export const store = configureStore({
         idGame: idJuegoReducer,
 
         platforms: platformasReducer,
+        idPlatforms: idPlatformsReducer,
 
         tags: tagsReducer,
+        idTags: idTagsReducer,
 
         publishers: publishersReducer,
+        idPublishers: idPublishersReducer,
 
     },
 

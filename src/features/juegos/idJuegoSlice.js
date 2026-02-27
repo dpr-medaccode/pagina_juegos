@@ -5,9 +5,9 @@ export const loadJuegoPorId = createAsyncThunk(
     "idGame/loadJuegoPorId",
     async (id) => {
         const data = await fetchJuegoPorId(id);
-        return data;
+        return data
     }
-);
+)
 
 const idJuegoSlice = createSlice({
 
@@ -22,16 +22,13 @@ const idJuegoSlice = createSlice({
 
     reducers: {
 
-        setIdGame: (state, action) => {
-            state.id = action.payload;
-        },
-
         clearIdGame: (state) => {
-            state.id = null;
-            state.juego = null;
-            state.error = null;
+            state.id = null
+            state.juego = null
+            state.error = null
         },
     },
+
     extraReducers: (builder) => {
 
         builder
@@ -55,5 +52,6 @@ const idJuegoSlice = createSlice({
 
 })
 
-export const { setIdGame, clearIdGame } = idJuegoSlice.actions;
-export default idJuegoSlice.reducer;
+export const { clearIdGame } = idJuegoSlice.actions
+
+export default idJuegoSlice.reducer
