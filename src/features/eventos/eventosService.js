@@ -6,7 +6,6 @@ export const eventos = [
 
 ]
 
-
 export const fetchEventos = () =>
 
     new Promise((resolve) => {

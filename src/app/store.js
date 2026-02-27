@@ -8,8 +8,8 @@ import idJuegoReducer from "../features/juegos/idJuegoSlice";
 import idPlatformsReducer from "../features/platformas/idPlatformsSlice"
 import idPublishersReducer from "../features/publishers/idPublishersSlice";
 import idTagsReducer from "../features/tags/idTagsSlice";
-
 import eventosReducer from "../features/eventos/eventosSlice";
+import favoritosReducer from '../features/favoritos/favoritosSlice'
 
 export const store = configureStore({
 
@@ -28,6 +28,8 @@ export const store = configureStore({
         idPublishers: idPublishersReducer,
 
         eventos: eventosReducer,
+
+        favoritos: favoritosReducer,
 
     },
 

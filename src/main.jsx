@@ -16,6 +16,7 @@ import DetallePublisherVista from './pages/publisher/DetallePublisherVista.jsx'
 import PlataformaVista from './pages/plataforma/PlataformaVista.jsx'
 import DetallePlataformaVista from './pages/plataforma/DetallePlataformaVista.jsx'
 import EventosVista from './pages/eventos/EventosVista.jsx'
+import FavoritosVista from './pages/favoritos/FavoritosVista.jsx'
 
 const router = createBrowserRouter([
 
@@ -75,6 +76,12 @@ const router = createBrowserRouter([
       {
         path: "/eventos",
         Component: EventosVista,
+      },
+
+
+      {
+        path: "/favoritos",
+        Component: FavoritosVista,
       },
 
     ]
