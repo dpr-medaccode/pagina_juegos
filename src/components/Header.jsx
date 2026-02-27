@@ -1,20 +1,16 @@
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import { Link, useNavigate } from "react-router";
+import { Popover, Transition, PopoverButton, PopoverPanel } from "@headlessui/react";
 
 export default function Header() {
-
   const [busqueda, set_busqueda] = useState('');
-  const [filtro, setFiltro] = useState('games'); // el filtro selecionado al recargar
+  const [filtro, setFiltro] = useState('games');
   const navigate = useNavigate();
 
   const handleKeyDown = (e) => {
-
     if (e.key === 'Enter' && busqueda.trim() !== '') {
-
-      navigate(`/${filtro}?search=${encodeURIComponent(busqueda)}?page=1`)
-
+      navigate(`/${filtro}?search=${encodeURIComponent(busqueda)}?page=1`);
     }
-
   }
 
   return (
@@ -32,48 +28,44 @@ export default function Header() {
             value={busqueda}
             onChange={(e) => set_busqueda(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder={
-              filtro === 'plataforma'
-                ? ''
-                : `Buscar ${filtro}...`
-            }
-
+            placeholder={filtro === 'plataforma' ? '' : `Buscar ${filtro}...`}
             disabled={filtro === 'plataforma'}
             className="
-            w-72
-          bg-zinc-900
-          text-zinc-100
-          placeholder-zinc-500
-            px-4 py-2
-            rounded-lg
-            border border-zinc-700
-            focus:outline-none
-            focus:ring-2
-          focus:ring-indigo-500
+              w-72
+              bg-zinc-900
+              text-zinc-100
+              placeholder-zinc-500
+              px-4 py-2
+              rounded-lg
+              border border-zinc-700
+              focus:outline-none
+              focus:ring-2
+              focus:ring-indigo-500
             "
           />
 
           <div className="relative w-44">
             <select
               onChange={(e) => {
-                setFiltro(e.target.value)
-                set_busqueda('')
-                navigate(`/${e.target.value}?page=1`)
+                setFiltro(e.target.value);
+                set_busqueda('');
+                navigate(`/${e.target.value}?page=1`);
               }}
               className="
-              w-full
-              bg-zinc-900
-              text-zinc-100
-              border border-zinc-700
-              rounded-lg
-              px-4 py-2
-              appearance-none
-              focus:outline-none
-              focus:ring-2
-              focus:ring-indigo-500
-              hover:border-indigo-500
-              transition
-              cursor-pointer"
+                w-full
+                bg-zinc-900
+                text-zinc-100
+                border border-zinc-700
+                rounded-lg
+                px-4 py-2
+                appearance-none
+                focus:outline-none
+                focus:ring-2
+                focus:ring-indigo-500
+                hover:border-indigo-500
+                transition
+                cursor-pointer
+              "
               defaultValue=""
             >
               <option value="games">Juego</option>
@@ -86,18 +78,54 @@ export default function Header() {
               ▼
             </div>
           </div>
-
         </div>
 
+        <Popover className="relative text-amber-50">
+          <PopoverButton className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg cursor-pointer">
+            U
+          </PopoverButton>
 
-        <nav className="flex gap-6 text-zinc-300">
-          <Link to="/" className="hover:text-indigo-400 transition">Inicio</Link>
-          <Link to="/eventos" className="hover:text-indigo-400 transition">Eventos</Link>
-          <Link to="/favoritos" className="hover:text-indigo-400 transition">Favoritos</Link>
-        </nav>
+          <Transition
+            as={Fragment}
+            enter="transition ease-out duration-200"
+            enterFrom="opacity-0 translate-y-1"
+            enterTo="opacity-100 translate-y-0"
+            leave="transition ease-in duration-150"
+            leaveFrom="opacity-100 translate-y-0"
+            leaveTo="opacity-0 translate-y-1"
+          >
+            <PopoverPanel className="absolute right-0 mt-2 w-36 bg-zinc-900 border border-zinc-700 rounded-lg shadow-lg z-50">
+              <ul className="py-2">
+                <li>
+                  <Link
+                    to="/"
+                    className="block px-4 py-2 hover:bg-indigo-500 hover:text-white transition rounded"
+                  >
+                    Inicio
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/eventos"
+                    className="block px-4 py-2 hover:bg-indigo-500 hover:text-white transition rounded"
+                  >
+                    Evento
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/favoritos"
+                    className="block px-4 py-2 hover:bg-indigo-500 hover:text-white transition rounded"
+                  >
+                    Favoritos
+                  </Link>
+                </li>
+              </ul>
+            </PopoverPanel>
+          </Transition>
+        </Popover>
 
       </div>
-    </header >
-
+    </header>
   );
 }
